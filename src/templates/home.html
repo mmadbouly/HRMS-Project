@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block head_title %}
+    HRMS-Home
+{% endblock %}
+
+{%block content%}
+
+{{title}}
+
+{{user}}
+
+{{user.is_authenticated}}
+
+{%for a in my_list%}
+    <li>{{a}}</li>
+{%endfor%}
+
+{%endblock%}

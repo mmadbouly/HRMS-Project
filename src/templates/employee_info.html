@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+
+{% block head_title %}
+    Here maybe as page title company's name
+{% endblock %}
+
+{% block content %}
+
+<h2>Employee ID: <p>{{object.EMP_EmployeeID}}</p> </h2>
+<li>{{object.EMP_LastName}}</li>
+<li>{{object.EMP_FirstName}}</li>
+<li>{{object.EMP_EmployeeGender}}</li>
+<li>{{object.EMP_DateOfBirth}}</li>
+<li>{{object.EMP_CompanyID}}</li>
+    
+<li>{{object.EMP_TimeStamp}}</li>
+
+    
+
+{% endblock %}
