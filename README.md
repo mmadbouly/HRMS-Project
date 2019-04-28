@@ -1,95 +1,47 @@
 # HRMS-Project
 
-One Paragraph of project description goes here
-
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-1) create a project folder
-2) create virtual env with python3
-3) activate the venv
-4) install django --> here we are using django==2.2 (April 2019)
-5) start django project
-6) copy the files from the repo (only the files of the main component (HR_ManagementSystem))
+Human Resources system for individuals and companies to manage their own human resources. The system should be able to manage the following points:          
+* Time tracking for employees and projects
+* Depending on the clearance degree the system functionality will be available
+  * Logged in as normal team member is different when logged in as team leader
 
 ### Prerequisites
-
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
-
+* Install Django here we are using django==2.2 (April 2019)
+  * for a better separation we recommend using a virtual environment *see down (Getting started step 2)*
+  * if you have a ```virtenv``` then activate it before installing django
+  ```
+  pip install django==2.2
+  ```
+  
+## Getting Started
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+1. clone the repo
+2. create a project folder
+    2. create virtual env with python3 ***(recommended)***
+    2. activate the venv
+3. go to src/ folder
+4. run with python 3:
+    ```bash
+    python manage.py runserver
+    ```
+* Follow the terminal message and go to your local host on any browser--> if you see django's message that it's working then you are good to go
+5. because the database is not pushed on the repo for safety purposes you need to make your own local database
+    go ahead and run:
+    ```bash
+    python manage.py makemigrations
+    ```
+    followed by:
+    ```bash
+    python manage.py migrate
+    ```
+    now create a superuser with:
+    ```bash
+    python manage.py createsuperuser
+    ```
+    now you can type in your browser 
+    ```
+    http://127.0.0.1:8000/admin/
+    ```
+    and check out the admin built in app
+6. Now if you know how django works you can start developing the site by adding to ```views.py``` or ```models.py``` 
+  6. if not then check any django tutorial to get a good understanding how it works and how it is built
